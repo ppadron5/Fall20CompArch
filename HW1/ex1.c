@@ -6,24 +6,39 @@
 
 int main()
 {
-    int a[10];
-    int n; 
+    //Final array with the zeros inserted
+    int retArr[16] = {000000000000};
+
+    //Array that holds conversion
+    int convArr[16];
+
+    //Number being converted
+    int input; 
+
+    //Iterator
     int i;
 
     printf("Enter number to convert: \n");
-    scanf("%d", &n);
+    scanf("%d", &input);
 
-    for(i=0;n>0;i++)
+    for(i=0;input>0;i++)
     {
-        a[i]=n%2;
-        n=n/2;
+        retArr[i]=input%2;
+        input=input/2;
     }
+
+    /*for(i=0; convArr[i] == 16; i++)
+    {
+        convArr[i] = retArr[i];
+        printf("%d", retArr);
+    }
+    */
 
     printf("Converted integer to binary is: ");
 
     for(i=i-1;i>=0;i--)
     {
-        printf("%d", a[i]);
+        printf("%d", retArr[i]);
     }
 
     return 0;
